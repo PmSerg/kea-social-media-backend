@@ -36,6 +36,7 @@ class Settings(BaseSettings):
     api_host: str = Field(default="0.0.0.0", description="API host")
     api_port: int = Field(default=8000, description="API port")
     api_workers: int = Field(default=1, description="Number of API workers")
+    port: Optional[int] = Field(default=None, description="Railway PORT override")
     
     # CORS Configuration
     allowed_origins: List[str] = Field(

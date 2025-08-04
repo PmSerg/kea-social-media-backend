@@ -227,10 +227,13 @@ if __name__ == "__main__":
     """Run the application directly for development."""
     import uvicorn
     
+    # Use PORT from environment for Railway, fallback to api_port
+    port = int(os.environ.get("PORT", settings.api_port))
+    
     uvicorn.run(
         "main:app",
         host=settings.api_host,
-        port=settings.api_port,
+        port=port,
         reload=settings.is_development,
         workers=settings.api_workers if not settings.is_development else 1,
         log_level=settings.log_level.lower()
