@@ -15,9 +15,10 @@ from shared.notion_client import (
     query_tasks,
     get_archetype_by_weight
 )
-from agents import ResearchAgent, CopywriterAgent
-from config import settings
-from .dependencies import get_openai_client, verify_api_key
+from agents.research_agent import ResearchAgent
+from agents.copywriter_agent import CopywriterAgent
+from config.settings import settings
+from api.dependencies import get_openai_client, verify_api_key
 
 logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/api", tags=["agencii"])

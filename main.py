@@ -16,7 +16,7 @@ import os
 from datetime import datetime
 
 # Import configuration
-from config import settings
+from config.settings import settings
 
 # Import API endpoints
 from api.command_endpoint import router as command_router
