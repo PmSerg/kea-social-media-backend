@@ -48,6 +48,9 @@ class Settings(BaseSettings):
     webhook_timeout: int = Field(default=10, description="Webhook timeout in seconds")
     webhook_retry_attempts: int = Field(default=3, description="Webhook retry attempts")
     
+    # API Security
+    backend_webhook_secret: str = Field(..., description="Secret key for API authentication", alias="API_SECRET_KEY")
+    
     # Rate Limiting
     rate_limit_default: str = Field(default="100 per minute", description="Default rate limit")
     rate_limit_commands: str = Field(default="10 per minute", description="Command endpoint rate limit")
